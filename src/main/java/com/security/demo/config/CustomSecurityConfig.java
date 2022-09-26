@@ -10,14 +10,16 @@ import org.springframework.security.web.SecurityFilterChain;
 /**
  * spring autoConfig 방지를 위한 어노테이션 @EnableWebSecurity
  */
-//@Configuration
-//@EnableWebSecurity
+@Configuration
+@EnableWebSecurity
 public class CustomSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        // 세션기반 인증 사용 안하므로
         http.csrf().disable()
-                .formLogin();
+                .formLogin()
+                .disable();
 
         return http.build();
     }

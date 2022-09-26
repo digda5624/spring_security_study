@@ -2,7 +2,10 @@ package com.security.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import javax.servlet.Filter;
+import java.util.Map;
 
 //@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 
@@ -18,10 +21,12 @@ public class DemoApplication {
 
 	/**
 	 * 스프링 부트 자동 구성
-	 * Spring Security의 기본 구성을 활성화 하여
+	 * Spring Security의 기본 구성을 활성화 하여 서블릿 Filter springSecurityFilterChain 을 생성 한다.
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		ConfigurableApplicationContext run = SpringApplication.run(DemoApplication.class, args);
+		Map<String, Filter> bean = run.getBeansOfType(Filter.class);
+		System.out.println("ddd");
 	}
 
 }
