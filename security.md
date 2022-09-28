@@ -134,3 +134,5 @@ Filter Chain 에 끼워넣고, 그 아래 다시 SecurityFilterChain 그룹을
 하는 방법 또한 존재한다.
 
 ![image](https://user-images.githubusercontent.com/69373314/192181158-da5fae4e-44f6-4de8-bf18-4527b4cea49c.png)
+
+## Security Exception Handling

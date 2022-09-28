@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="EUC-KR">
+    <title>Insert title here</title>
+</head>
+<body>
+
+<h2> 로그인</h2>
+
+<!-- "로그인" 클릭(submi)시 http://localhost/step01_basic/playdata 호출 -->
+<form action="login" method = "post">
+
+    <!-- label : 단순히 브라우저에 출력하는 메세지 -->
+    <label>id :</label><br>
+    <input type="text" name="name" value="아이디"><br>
+
+    <!-- pw를 보이지 않게 하기위해 type = "password"로 변경
+        <br> tag가 없으면 라인이 붙어서 나온다. -->
+    <label>pw :</label><br>
+    <input type="password" name="password" value="11"><br><br>
+
+    <!-- submit을 누르면 id,pw값을 서버에 밀어넣는다, 위치는 어디든 상관 x -->
+    <input type="submit" value="로그인">
+</form>
+
+</body>
+</html>
