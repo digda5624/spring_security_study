@@ -28,9 +28,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         // token 에 저장했던 비밀번호를 가져온다.
         String password = (String) token.getCredentials();
 
+        // userDetailsService 에서 DB 에서 회원정보를 가져온후 user 정보를 추출한다.
         MyUserDetails userDetails = (MyUserDetails) userDetailsService.loadUserByUsername(userName);
         User user = userDetails.getUser();
 
+        // user의 password 와 request 의 password 가 맞는지 확인하는 절차를 가진다.
         if(!user.getPassword().equals(password)){
             throw new RuntimeException("user Password 가 일치하지 않습니다.");
         }

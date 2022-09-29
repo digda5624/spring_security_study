@@ -13,6 +13,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -31,11 +32,14 @@ public class CustomSecurityConfig {
         http.csrf().disable()
                 // 세션기반 인증을 진행하지만 Html Form 을 사용하지 않으므로 formLogin을 disable 한다.
                 .formLogin().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
                 // 로그인 필터를 구현
                 .addFilterBefore(customAuthenticationFilter(authenticationManager), LogoutFilter.class)
                 .authenticationManager(authenticationManager)
                 // 현재는 모든 요청들에 대하여 인가 확인을 하지 않는다.
                 .authorizeRequests()
+                .antMatchers("/user").access("hasRole('ADMIN')")
                 .anyRequest().permitAll();
 
         return http.build();
