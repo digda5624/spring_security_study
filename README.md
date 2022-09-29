@@ -33,6 +33,13 @@ AuthenticationFailureHandler 를 호출하여 후처리
 ## Authorization 과정
 기본적으로 FilterSecurityInterceptor 를 활용한 Authorization 을 사용하게 된다. 
 
+여기서 또한 FilterSecurityInterceptor 는 인가를 AccessDecisionManager 에게 위임하게 되며
+AccessDecisionManager는  투표를 기반으로 request에 대한 access 승인 요청을 내리게 된다.
+
+투표를 담당하는 클래스는 AccessDecisionVoter 이고 그에 대한 구현체로 RoleVoter가 기본 값이다.
+
+따라서 User 쪽 Authority 를 구현하게 될 때, ROLE_ prefix 를 고려해봄이 좋다.
+
 인가에 실패하게 될 경우 FilterSecurityInterceptor 는 AccessDeniedException 을 throw
 하게 되고, ExceptionTranslationFilter 에서 catch 하게 된다.
 인가에 대한 오류 후처리는 ExceptionTranslationFilter 에서 담당하게 된다.

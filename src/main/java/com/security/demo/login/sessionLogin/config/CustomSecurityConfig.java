@@ -32,8 +32,7 @@ public class CustomSecurityConfig {
         http.csrf().disable()
                 // 세션기반 인증을 진행하지만 Html Form 을 사용하지 않으므로 formLogin을 disable 한다.
                 .formLogin().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 // 로그인 필터를 구현
                 .addFilterBefore(customAuthenticationFilter(authenticationManager), LogoutFilter.class)
                 .authenticationManager(authenticationManager)
