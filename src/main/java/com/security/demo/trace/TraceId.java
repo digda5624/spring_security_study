@@ -19,12 +19,37 @@ public class TraceId {
     private String request;
     private int level;
 
+    public TraceId(User user, String request) {
+        this.user = user;
+        this.request = request;
+        this.level = 0;
+    }
+
     public boolean isFirstLevel(){
         return level == 0;
+    }
+
+    public TraceId levelUp(){
+        level++;
+        return this;
+    }
+
+    public TraceId levelDown(){
+        level--;
+        return this;
     }
 
     @Override
     public String toString() {
         return user.getId() + " 요청내용 : " + request;
     }
+
+    public TraceId createNextId() {
+        return new TraceId(user, request, level + 1);
+    }
+
+    public TraceId createPreviousId() {
+        return new TraceId(user, request,level - 1);
+    }
+
 }

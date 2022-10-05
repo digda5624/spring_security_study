@@ -47,3 +47,6 @@ AccessDecisionManager는  투표를 기반으로 request에 대한 access 승인
 따라서 오류필터 내부에는 후처리기인 AccessDeniedHandler 가 존재하게 된다.
 
 ![image](https://user-images.githubusercontent.com/69373314/192447772-3ece95a7-8ca1-40ac-a0e1-554867fb3f6e.png)
+
+## ⭐ 필터들간 사용하는 참조들 목록 ⭐
+![image](https://user-images.githubusercontent.com/69373314/192928080-08a9843e-1823-4a45-a04e-d362be981ad4.png)

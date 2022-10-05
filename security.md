@@ -109,7 +109,7 @@ SecurityFilter 는 상당히 많은 Filter 들이 Chain 형식으로 묶여 있�
 여러개의 SecurityFilter를 관리하기 위해 FilterChainProxy로 Filter집합을
 만들었으며 내부적으로는 여러개의 필터들이 엮여있다.
 
-
+---
 
 ![img_1.png](img_1.png)
 
@@ -125,6 +125,8 @@ Filter Chain 에 끼워넣고, 그 아래 다시 SecurityFilterChain 그룹을
 
 그로 인하여 나온 것이 DelegatingFilterProxy 이다. 내부적으로 target 즉, spring 컨테이너에
 등록된 filterChain을 가지고 인증 인가 작업을 실시하게 된다.
+
+---
 
 ![image](https://user-images.githubusercontent.com/69373314/192180886-f6bcdac0-96af-47a8-81b7-54e8b026f528.png)
 
