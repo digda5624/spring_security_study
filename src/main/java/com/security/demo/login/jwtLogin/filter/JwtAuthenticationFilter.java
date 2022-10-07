@@ -3,6 +3,7 @@ package com.security.demo.login.jwtLogin.filter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.security.demo.app.entity.User;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -20,6 +21,10 @@ import java.io.IOException;
  */
 @Slf4j
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+        setAuthenticationManager(authenticationManager);
+    }
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {

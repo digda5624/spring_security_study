@@ -5,8 +5,10 @@ import com.security.demo.app.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
+@Component
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;

@@ -18,7 +18,9 @@ public class JwtLoginSuccessHandler extends SavedRequestAwareAuthenticationSucce
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
 
         // Authentication 기반으로 토큰생성
+        System.out.println("request = " + request);
         String accessToken = JwtUtils.createAccessToken(authentication);
         response.setHeader("Access-Token", accessToken);
+        response.getWriter().println("login success");
     }
 }

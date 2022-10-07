@@ -1,5 +1,8 @@
 package com.security.demo;
 
+import com.security.demo.login.jwtLogin.config.JwtSecurityConfig;
+import com.security.demo.login.sessionLogin.CustomAuthenticationFilter;
+import com.security.demo.login.sessionLogin.config.CustomSecurityConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,8 +20,9 @@ import java.util.Map;
  * 3. 기본 로그인 페이지 제공
  * 4. 기본 계정 제공 : user / password (Application 로딩 시점에 console 에서 확인)
  */
-@SpringBootApplication(scanBasePackages = {"com.security.demo.app"})
-@Import()
+@SpringBootApplication(scanBasePackages = {"com.security.demo.app", "com.security.demo.login.userDetail"})
+@Import(JwtSecurityConfig.class)
+//@Import(CustomSecurityConfig.class)
 public class DemoApplication {
 
 	/**
