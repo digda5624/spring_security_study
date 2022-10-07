@@ -1,8 +1,7 @@
-package com.security.demo.trace;
+package com.security.demo.app.trace;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 
 @Slf4j

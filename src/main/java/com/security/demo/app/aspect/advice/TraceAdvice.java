@@ -1,11 +1,10 @@
-package com.security.demo.aspect.advice;
+package com.security.demo.app.aspect.advice;
 
-import com.security.demo.entity.Role;
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.Role;
+import com.security.demo.app.entity.User;
 import com.security.demo.login.userDetail.MyUserDetails;
-import com.security.demo.trace.Trace;
-import com.security.demo.trace.TraceStatus;
-import com.security.demo.trace.TraceV2;
+import com.security.demo.app.trace.TraceStatus;
+import com.security.demo.app.trace.TraceV2;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -21,7 +20,7 @@ public class TraceAdvice {
 
     private final TraceV2 tracer;
 
-    @Around("com.security.demo.aspect.pointcut.Pointcuts.allController()")
+    @Around("com.security.demo.app.aspect.pointcut.Pointcuts.allController()")
     public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
 
         TraceStatus status = null;

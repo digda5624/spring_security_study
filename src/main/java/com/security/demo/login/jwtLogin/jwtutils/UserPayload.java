@@ -1,6 +1,6 @@
 package com.security.demo.login.jwtLogin.jwtutils;
 
-import com.security.demo.entity.Role;
+import com.security.demo.app.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

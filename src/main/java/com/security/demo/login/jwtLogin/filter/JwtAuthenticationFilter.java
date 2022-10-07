@@ -1,14 +1,13 @@
 package com.security.demo.login.jwtLogin.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

@@ -3,6 +3,7 @@ package com.security.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Import;
 
 import javax.servlet.Filter;
 import java.util.Map;
@@ -16,7 +17,8 @@ import java.util.Map;
  * 3. 기본 로그인 페이지 제공
  * 4. 기본 계정 제공 : user / password (Application 로딩 시점에 console 에서 확인)
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.security.demo.app"})
+@Import()
 public class DemoApplication {
 
 	/**

@@ -4,7 +4,7 @@ import com.security.demo.login.sessionLogin.CustomAuthenticationFilter;
 import com.security.demo.login.sessionLogin.CustomAuthenticationProvider;
 import com.security.demo.login.sessionLogin.CustomLoginSuccessHandler;
 import com.security.demo.login.userDetail.UserDetailsServiceImpl;
-import com.security.demo.repository.UserRepository;
+import com.security.demo.app.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -13,11 +13,9 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 /**

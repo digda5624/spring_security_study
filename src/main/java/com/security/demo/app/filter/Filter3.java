@@ -1,4 +1,4 @@
-package com.security.demo.filter;
+package com.security.demo.app.filter;
 
 import lombok.extern.slf4j.Slf4j;
 

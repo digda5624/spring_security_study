@@ -1,6 +1,6 @@
-package com.security.demo.repository;
+package com.security.demo.app.repository;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,6 @@
-package com.security.demo.trace;
+package com.security.demo.app.trace;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import com.security.demo.login.userDetail.MyUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContext;

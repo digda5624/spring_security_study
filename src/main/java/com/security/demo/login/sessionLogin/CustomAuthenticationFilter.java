@@ -1,7 +1,7 @@
 package com.security.demo.login.sessionLogin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

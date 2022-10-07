@@ -1,12 +1,11 @@
 package com.security.demo.trace;
 
-import com.security.demo.entity.Role;
-import com.security.demo.entity.User;
-import org.junit.jupiter.api.BeforeEach;
+import com.security.demo.app.entity.Role;
+import com.security.demo.app.entity.User;
+import com.security.demo.app.trace.TraceStatus;
+import com.security.demo.app.trace.TraceV1;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TraceV1Test {
 

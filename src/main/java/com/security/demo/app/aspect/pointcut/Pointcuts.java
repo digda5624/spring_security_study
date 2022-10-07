@@ -1,4 +1,4 @@
-package com.security.demo.aspect.pointcut;
+package com.security.demo.app.aspect.pointcut;
 
 import org.aspectj.lang.annotation.Pointcut;
 

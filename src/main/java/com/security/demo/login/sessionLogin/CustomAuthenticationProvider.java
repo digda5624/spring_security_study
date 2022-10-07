@@ -1,6 +1,6 @@
 package com.security.demo.login.sessionLogin;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import com.security.demo.login.userDetail.MyUserDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;

@@ -1,6 +1,6 @@
-package com.security.demo.trace;
+package com.security.demo.app.trace;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

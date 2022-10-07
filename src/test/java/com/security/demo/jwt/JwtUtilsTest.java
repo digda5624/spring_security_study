@@ -1,7 +1,7 @@
 package com.security.demo.jwt;
 
-import com.security.demo.entity.Role;
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.Role;
+import com.security.demo.app.entity.User;
 import com.security.demo.login.jwtLogin.jwtutils.JwtUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

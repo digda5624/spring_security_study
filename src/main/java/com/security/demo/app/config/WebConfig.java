@@ -1,4 +1,4 @@
-package com.security.demo.config;
+package com.security.demo.app.config;
 
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 

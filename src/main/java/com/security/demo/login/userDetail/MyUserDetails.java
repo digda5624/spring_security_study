@@ -1,6 +1,6 @@
 package com.security.demo.login.userDetail;
 
-import com.security.demo.entity.User;
+import com.security.demo.app.entity.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

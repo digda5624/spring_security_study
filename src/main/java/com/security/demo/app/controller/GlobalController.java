@@ -1,19 +1,15 @@
-package com.security.demo.controller;
+package com.security.demo.app.controller;
 
-import com.security.demo.entity.Role;
-import com.security.demo.entity.User;
-import com.security.demo.login.userDetail.MyUserDetails;
-import com.security.demo.repository.UserRepository;
-import com.security.demo.trace.TraceStatus;
-import com.security.demo.trace.TraceV1;
-import com.security.demo.trace.TraceV2;
+import com.security.demo.app.entity.Role;
+import com.security.demo.app.entity.User;
+import com.security.demo.app.repository.UserRepository;
+import com.security.demo.app.trace.TraceStatus;
+import com.security.demo.app.trace.TraceV2;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Map;
-import java.util.Random;
 
 @RestController
 @Slf4j

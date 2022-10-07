@@ -1,4 +1,4 @@
-package com.security.demo.trace;
+package com.security.demo.app.trace;
 
 public interface Trace {
 

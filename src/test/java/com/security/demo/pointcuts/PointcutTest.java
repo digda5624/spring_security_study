@@ -1,7 +1,6 @@
 package com.security.demo.pointcuts;
 
-import com.security.demo.controller.GlobalController;
-import org.assertj.core.api.Assertions;
+import com.security.demo.app.controller.GlobalController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
@@ -23,7 +22,7 @@ public class PointcutTest {
     @DisplayName("[success] ")
     public void pointcutBasicTest(){
         // given
-        pointcut.setExpression("execution(String com.security.demo.controller.GlobalController.pass(..))");
+        pointcut.setExpression("execution(String com.security.demo.app.controller.GlobalController.pass(..))");
         assertThat(pointcut.matches(GlobalController.class)).isTrue();
 
         pointcut.setExpression("execution(com.security.demo.controller.**.pass(..))");
