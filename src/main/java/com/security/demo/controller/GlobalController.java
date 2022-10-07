@@ -65,9 +65,6 @@ public class GlobalController {
 
     @GetMapping("/pass")
     public String pass(HttpServletRequest request) throws InterruptedException {
-        User user = new User(1L, null, "현승구", Role.ROLE_ADMIN);
-        MyUserDetails userDetails = new MyUserDetails(user);
-        SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities()));
         TraceStatus status = traceV2.begin(request.getSession().getId().substring(1,3), "pass 컨트롤러");
         Thread.sleep((int) (Math.random() * 1000));
         TraceStatus status2 = traceV2.begin(request.getSession().getId().substring(1,3), "pass 컨트롤러 2");

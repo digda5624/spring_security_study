@@ -19,6 +19,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     /**
      * 이곳에서 인증을 진행하게 된다.
+     * ProviderManager 가 AuthenticationProvider 를 호출하게 된다.
      */
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -38,7 +39,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
 
         // 비밀번호 기밀 유지를 위해 credentials 에 비밀번호를 없앤다.
-        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+        return new UsernamePasswordAuthenticationToken(user, null, userDetails.getAuthorities());
     }
 
     @Override
