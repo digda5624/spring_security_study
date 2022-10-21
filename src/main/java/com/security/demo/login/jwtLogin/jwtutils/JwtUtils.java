@@ -24,14 +24,28 @@ public final class JwtUtils {
     }
 
     private static String accessToken(User user){
-        Map<String, Object> payload =
-                Map.of("id", user.getId(), "name", user.getName(), "role", user.getRole().toString());
+        Map<String, Object> payload = createClaims(user);
 
         return JWT.create()
                 .withSubject("Digda_Test_token")
                 .withExpiresAt(new Date(System.currentTimeMillis() + jwtExpirationInMs * 1000L))
                 .withPayload(Map.of("userInfo", payload))
                 .sign(Algorithm.HMAC512(secretKey));
+    }
+
+    private static Map<String, Object> createClaims(User user){
+        Map<String, Object> claims = new HashMap<>();
+
+        claims.put("id", user.getId());
+        claims.put("name", user.getName());
+        claims.put("role", user.getRole());
+
+        return claims;
+    }
+
+    public void validateToken(String token) {
+//        JWT.decode(token)
+
     }
 
 }

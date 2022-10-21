@@ -3,6 +3,8 @@ package com.security.demo;
 import com.security.demo.login.jwtLogin.config.JwtSecurityConfig;
 import com.security.demo.login.sessionLogin.CustomAuthenticationFilter;
 import com.security.demo.login.sessionLogin.config.CustomSecurityConfig;
+import com.security.demo.websocket.WebSockConfig;
+import com.security.demo.websocket.WebSockHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -21,7 +23,7 @@ import java.util.Map;
  * 4. 기본 계정 제공 : user / password (Application 로딩 시점에 console 에서 확인)
  */
 @SpringBootApplication(scanBasePackages = {"com.security.demo.app", "com.security.demo.login.userDetail"})
-@Import(JwtSecurityConfig.class)
+@Import({JwtSecurityConfig.class, WebSockConfig.class, WebSockHandler.class})
 //@Import(CustomSecurityConfig.class)
 public class DemoApplication {
 
