@@ -1,3 +1,8 @@
+# hibernate - Interceptor 에 대한 실험
+
+hibernate jpa 구현체는 트랜잭션을 얻거나 동기화하는 과정에서 interceptor 의 개념을 통해 개발자가 
+jpa 구현체를 좀 더 customizing 할 수 있도록 한다.
+
 # Spring Security Stream
 
 스프링 시큐리티의 제일 중요한 포인트는 인증(Authentication) 과 허가 (Authorization)이다.

@@ -8,6 +8,7 @@ import org.springframework.web.socket.WebSocketSession;
 
 @Component
 public class WebSockHandler implements WebSocketHandler {
+
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         System.out.println("afterConnectionEstablished");
