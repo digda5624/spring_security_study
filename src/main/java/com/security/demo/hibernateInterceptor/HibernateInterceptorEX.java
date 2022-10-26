@@ -14,7 +14,7 @@ import java.util.Iterator;
  * hibernate 에는 트랜잭션을 처리하거나, flush 를 진행할 때 interceptor 를 사용하여 커스터마이징 할 수 있다.
  */
 @Slf4j
-public class HibernateInterceptor extends EmptyInterceptor {
+public class HibernateInterceptorEX extends EmptyInterceptor {
 
     private final ThreadLocal<Long> queryCounter = new ThreadLocal<>();
 

@@ -1,12 +1,10 @@
 package com.security.demo.app.controller;
 
-import com.security.demo.app.controller.interceptor.InterceptorForQueryCounter;
 import com.security.demo.app.entity.User;
 import com.security.demo.app.repository.UserRepository;
-import com.security.demo.hibernateInterceptor.HibernateInterceptor;
+import com.security.demo.hibernateInterceptor.HibernateInterceptorEX;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class QueryCounterController {
 
-    private final HibernateInterceptor queryCounter;
+    private final HibernateInterceptorEX queryCounter;
     private final UserRepository userRepository;
 
     /**

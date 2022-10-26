@@ -1,9 +1,8 @@
 package com.security.demo.app.controller.interceptor;
 
-import com.security.demo.hibernateInterceptor.HibernateInterceptor;
+import com.security.demo.hibernateInterceptor.HibernateInterceptorEX;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,25 +15,25 @@ import javax.servlet.http.HttpServletResponse;
 public class InterceptorForQueryCounter implements HandlerInterceptor {
 
     private ThreadLocal<Long> timer = new ThreadLocal<>();
-    private final HibernateInterceptor hibernateInterceptor;
+    private final HibernateInterceptorEX hibernateInterceptorEX;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         timer.set(System.currentTimeMillis());
-        hibernateInterceptor.startCounter();
+        hibernateInterceptorEX.startCounter();
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         long time = System.currentTimeMillis() - timer.get();
-        long queryCount = hibernateInterceptor.getQueryCount();
+        long queryCount = hibernateInterceptorEX.getQueryCount();
         log.info("[Total Time: {} ms] [Queries: {}] [{}, {}]", time, queryCount, request.getRequestURL(), request.getMethod());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        hibernateInterceptor.clearCounter();
+        hibernateInterceptorEX.clearCounter();
         timer.remove();
     }
 }

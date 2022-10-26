@@ -1,7 +1,7 @@
 package com.security.demo.app.config;
 
 import com.security.demo.app.controller.interceptor.InterceptorForQueryCounter;
-import com.security.demo.hibernateInterceptor.HibernateInterceptor;
+import com.security.demo.hibernateInterceptor.HibernateInterceptorEX;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -55,8 +55,8 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public HibernateInterceptor hibernateInterceptor(){
-        return new HibernateInterceptor();
+    public HibernateInterceptorEX hibernateInterceptor(){
+        return new HibernateInterceptorEX();
     }
 
 }
