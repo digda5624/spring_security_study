@@ -10,7 +10,9 @@ public class Pointcuts {
     /**
      * pointcut 서순 접근제어자(?) 반환타입 선언타입?메서드이름(파라미터) 예외?)
      */
-    @Pointcut("execution(* com.security.demo.controller..*.pass(..))")
+    @Pointcut("execution(* com.security.demo.app.controller.GlobalController.*(..))")
     public void allController(){}
 
+    @Pointcut("execution(* com.security.demo.app.repository..*(..))")
+    public void allRepository(){}
 }

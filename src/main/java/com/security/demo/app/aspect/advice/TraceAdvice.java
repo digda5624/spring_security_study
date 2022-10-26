@@ -20,7 +20,7 @@ public class TraceAdvice {
 
     private final TraceV2 tracer;
 
-    @Around("com.security.demo.app.aspect.pointcut.Pointcuts.allController()")
+    @Around("com.security.demo.app.aspect.pointcut.Pointcuts.allController() || com.security.demo.app.aspect.pointcut.Pointcuts.allRepository()")
     public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
 
         TraceStatus status = null;

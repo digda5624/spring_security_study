@@ -6,6 +6,7 @@ import com.security.demo.app.repository.UserRepository;
 import com.security.demo.app.trace.TraceStatus;
 import com.security.demo.app.trace.TraceV2;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -20,16 +21,18 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GlobalController {
 
-    UserRepository userRepository;
-    TraceV2 traceV2;
+    private final UserRepository userRepository;
+    private final TraceV2 traceV2;
+    Long i = 1L;
 
     @PostMapping("/join")
     @Transactional
     public User join(){
-        User user = new User(1L, "1234", "현승구", Role.ROLE_ADMIN);
+        User user = new User(i, "1234", "현승구", Role.ROLE_ADMIN);
+        i++;
         userRepository.save(user);
         return user;
     }
