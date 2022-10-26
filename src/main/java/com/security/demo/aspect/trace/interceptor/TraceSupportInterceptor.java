@@ -96,6 +96,6 @@ public class TraceSupportInterceptor implements HandlerInterceptor {
     }
 
     public static void countQuery(){
-        queryCountHolder.set(queryCountHolder.get());
+        queryCountHolder.set(queryCountHolder.get() + 1);
     }
 }
