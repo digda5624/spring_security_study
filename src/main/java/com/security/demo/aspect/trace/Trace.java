@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import static FIS.iLUVit.aspect.trace.TraceId.createTraceId;
-import static FIS.iLUVit.aspect.trace.interceptor.TraceSupportInterceptor.*;
+import static com.security.demo.aspect.trace.TraceId.createTraceId;
+import static com.security.demo.aspect.trace.interceptor.TraceSupportInterceptor.*;
 
 @Component
 @Slf4j

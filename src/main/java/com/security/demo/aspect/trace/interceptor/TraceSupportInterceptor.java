@@ -1,7 +1,7 @@
 package com.security.demo.aspect.trace.interceptor;
 
-import FIS.iLUVit.aspect.trace.RequestInfo;
-import FIS.iLUVit.security.uesrdetails.PrincipalDetails;
+import com.security.demo.aspect.trace.RequestInfo;
+import com.security.demo.login.userDetail.MyUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.core.Authentication;
@@ -40,8 +40,8 @@ public class TraceSupportInterceptor implements HandlerInterceptor {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
 
-        if(principal instanceof PrincipalDetails){
-            Long userId = ((PrincipalDetails) principal).getUser().getId();
+        if(principal instanceof MyUserDetails){
+            Long userId = ((MyUserDetails) principal).getUser().getId();
             userHolder.set(userId);
         } else {
             userHolder.set(-1L);
@@ -65,6 +65,7 @@ public class TraceSupportInterceptor implements HandlerInterceptor {
                 null,
                 currentQueryCnt()
         );
+        releaseTraceInfos();
     }
 
     private void releaseTraceInfos(){
@@ -92,5 +93,9 @@ public class TraceSupportInterceptor implements HandlerInterceptor {
 
     public static Long currentQueryCnt(){
         return queryCountHolder.get();
+    }
+
+    public static void countQuery(){
+        queryCountHolder.set(queryCountHolder.get());
     }
 }
