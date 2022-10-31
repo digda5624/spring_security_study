@@ -31,6 +31,8 @@ public class JwtSecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .formLogin().disable()
+                .requestCache().disable()
+                .headers().disable()
                 .addFilterBefore(jwtAuthenticationFilter(authenticationManager), LogoutFilter.class)
                 .authenticationManager(authenticationManager)
                 // 일단 현재에서는 Test를 위해서 모든 요청들에 대해 인가 검사를 하지 않게 적용했다.

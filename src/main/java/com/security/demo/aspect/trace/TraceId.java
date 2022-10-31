@@ -20,7 +20,7 @@ public class TraceId {
         this.userId = userId;
         this.request = request;
         this.method = method;
-        this.level = 0;
+        this.level = 1;
     }
 
     public static TraceId createTraceId(String UUID, Long userId, String request, String method){
@@ -28,7 +28,7 @@ public class TraceId {
     }
 
     public boolean isFirstLevel(){
-        return level == 0;
+        return level == 1;
     }
 
     public TraceId levelUp(){
@@ -46,12 +46,12 @@ public class TraceId {
         return "requestId : " + UUID + " userId : " + userId + " 요청내용 : " + request;
     }
 
-    public TraceId createNextId() {
-        return new TraceId(UUID, userId, request, method,level + 1);
-    }
+//    public TraceId createNextId() {
+//        return new TraceId(UUID, userId, request, method,level + 1);
+//    }
 
-    public TraceId createPreviousId() {
-        return new TraceId(UUID, userId, request, method,level - 1);
-    }
+//    public TraceId createPreviousId() {
+//        return new TraceId(UUID, userId, request, method,level - 1);
+//    }
 
 }

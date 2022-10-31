@@ -5,7 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import static com.security.demo.aspect.trace.TraceId.createTraceId;
-import static com.security.demo.aspect.trace.interceptor.TraceSupportInterceptor.*;
+import static com.security.demo.aspect.trace.TraceSupports.*;
+
 
 @Component
 @Slf4j

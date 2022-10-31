@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.EmptyInterceptor;
 import org.springframework.stereotype.Component;
 
-import static com.security.demo.aspect.trace.interceptor.TraceSupportInterceptor.countQuery;
+import static com.security.demo.aspect.trace.TraceSupports.countQuery;
 
 /**
  * 쿼리 수 측정을 위한 hibernateInterceptor 커스터 마이징
